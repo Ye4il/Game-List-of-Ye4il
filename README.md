@@ -1,1 +1,4 @@
-İts my personal game list. Im updating it day by day. I hope you will like and enjoy it. Have fun.
+https://ye4il.github.io/Game-List-of-Ye4il/ 
+
+Click this link to go list.
+Listeye gitmek için linke tıklayın.
