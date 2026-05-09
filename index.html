@@ -12,7 +12,7 @@
   --dark:#0d0015; --panel:rgba(13,0,21,0.88);
   --grad:linear-gradient(135deg,var(--pink),var(--purple),var(--blue));
 }
-body { background:var(--dark); color:#e0c8ff; font-family:"Exo 2",sans-serif; min-height:100vh; }
+body { background:var(--dark); color:#e0c8ff; font-family:"Exo 2",sans-serif; min-height:100vh; padding-bottom:56px; }
 body::before {
   content:''; position:fixed; top:0; left:0; right:0; bottom:0;
   background:radial-gradient(ellipse at 20% 50%,rgba(176,38,255,0.08) 0%,transparent 60%),
@@ -171,7 +171,9 @@ header p { font-family:"Orbitron",sans-serif; font-size:0.6rem; color:rgba(176,3
 footer {
   text-align:center; padding:16px; border-top:1px solid rgba(176,38,255,0.15);
   background:rgba(13,0,21,0.9); font-family:"Orbitron",sans-serif;
-  font-size:0.6rem; color:rgba(176,38,255,0.3); letter-spacing:2px; margin-top:8px;
+  font-size:0.6rem; color:rgba(176,38,255,0.3); letter-spacing:2px;
+  position:fixed; bottom:0; left:0; right:0; z-index:200;
+  backdrop-filter:blur(10px);
 }
 footer span { background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 footer a { color:var(--blue); text-decoration:none; }
@@ -183,7 +185,7 @@ footer a { color:var(--blue); text-decoration:none; }
   <div class="date-line"><em>AÇILIŞ //</em> 27.04.2025</div>
 </div>
 <div class="date-badge-right">
-  <div class="date-line"><em>SON DÜZENLEME //</em> 29.04.2025</div>
+  <div class="date-line"><em>SON DÜZENLEME //</em> 10.05.2025</div>
 </div>
 
 <header>
@@ -225,25 +227,26 @@ const GAMES = [
   { id:1,  name:"Kingdom Come: Deliverance",           appId:379430,  special:false, genre:"Açık Dünya · Aksiyon-RPG", score:"9.2", metacritic:"76", note:"Ortaçağ Bohemya'sında sıradan bir demirci oğlu olarak başladığın bu yolculuk, seni hem tarihsel hem duygusal olarak derinden etkiliyor. Hiçbir sihir yok, hiçbir seçilmiş kahraman hikayesi yok — sadece gerçek, ham ve acımasız bir dünya var. Dövüş sistemi başta sinir bozucu gelse de ustalaştıkça inanılmaz tatmin veriyor.", steam:"https://store.steampowered.com/app/379430/", youtube:"" },
   { id:2,  name:"Kingdom Come: Deliverance II",         appId:1771300, special:true,  genre:"Açık Dünya · Aksiyon-RPG", score:"9.5", metacritic:"89", note:"İlk oyunun sağlam temellerini alıp her şeyi bir üst seviyeye taşıyor. Henry artık daha olgun, dünya daha geniş ve hikaye çok daha epik. Orta Çağ simülasyonu olarak türün zirvesi.", steam:"https://store.steampowered.com/app/1771300/", youtube:"" },
   { id:3,  name:"Dispatch",                             appId:2592160, special:true,  genre:"Macera · Strateji · İnteraktif Hikaye", score:"9.9", metacritic:"87", note:"Eski Telltale geliştiricilerinden gelen bu süper kahraman iş yeri komedisi, her kararın hikayeyi şekillendirdiği muhteşem bir anlatı sunuyor. Zırhını kaybeden Mecha Man olarak bir sevk merkezinde dispatcher olarak çalışırken hem takımını yönetiyorsun hem de intikam peşinde koşuyorsun. Seçimlerin gerçekten önemli ve karakterler arasındaki dinamikler inanılmaz iyi yazılmış.", steam:"https://store.steampowered.com/app/2592160/", youtube:"" },
-  { id:4,  name:"Call of Duty",                         appId:2620,    special:false, steam:"https://store.steampowered.com/app/2620/" },
-  { id:5,  name:"Call of Duty 2",                       appId:2630,    special:false, steam:"https://store.steampowered.com/app/2630/" },
-  { id:6,  name:"Call of Duty 4: Modern Warfare",       appId:7940,    special:false, steam:"https://store.steampowered.com/app/7940/" },
-  { id:7,  name:"Call of Duty: World at War",           appId:10090,   special:false, steam:"https://store.steampowered.com/app/10090/" },
-  { id:8,  name:"Call of Duty: Modern Warfare 2",       appId:10180,   special:false, steam:"https://store.steampowered.com/app/10180/" },
-  { id:9,  name:"Call of Duty: Black Ops",              appId:42700,   special:false, steam:"https://store.steampowered.com/app/42700/" },
-  { id:10, name:"Call of Duty: Modern Warfare 3",       appId:115300,  special:false, steam:"https://store.steampowered.com/app/115300/" },
-  { id:11, name:"Call of Duty: Black Ops II",           appId:202990,  special:false, steam:"https://store.steampowered.com/app/202990/" },
-  { id:12, name:"Call of Duty: Ghosts",                 appId:209160,  special:false, steam:"https://store.steampowered.com/app/209160/" },
-  { id:13, name:"Call of Duty: Advanced Warfare",       appId:209650,  special:false, steam:"https://store.steampowered.com/app/209650/" },
-  { id:14, name:"Watch Dogs",                           appId:243470,  special:false, steam:"https://store.steampowered.com/app/243470/" },
-  { id:15, name:"Watch Dogs 2",                         appId:447040,  special:false, steam:"https://store.steampowered.com/app/447040/" },
-  { id:16, name:"The Witcher 3: Wild Hunt",             appId:292030,  special:false, steam:"https://store.steampowered.com/app/292030/" },
-  { id:17, name:"Ghostrunner",                          appId:1139900, special:false, steam:"https://store.steampowered.com/app/1139900/" },
-  { id:18, name:"Heavy Rain",                           appId:960910,  special:false, steam:"https://store.steampowered.com/app/960910/" },
-  { id:19, name:"Battlefield 1",                        appId:1238840, special:false, steam:"https://store.steampowered.com/app/1238840/" },
-  { id:20, name:"Battlefield 3",                        appId:1238820, special:false, steam:"https://store.steampowered.com/app/1238820/" },
-  { id:21, name:"Battlefield 4",                        appId:1238810, special:false, steam:"https://store.steampowered.com/app/1238810/" },
-  { id:22, name:"Battlefield Hardline",                 appId:1238830, special:false, steam:"https://store.steampowered.com/app/1238830/" },
+  { id:4,  name:"Call of Duty",                         appId:2620,    special:false, genre:"FPS · Savaş", note:"Seriyi başlatan efsane. İkinci Dünya Savaşı atmosferini o dönem için inanılmaz bir gerçekçilikle yansıtıyordu. Çok oyunculu modu olmasa da hikaye modunun yoğunluğu seni koltuğa yapıştırıyor.", steam:"https://store.steampowered.com/app/2620/" },
+  { id:5,  name:"Call of Duty 2",                       appId:2630,    special:false, genre:"FPS · Savaş", note:"İkinci oyun her şeyi büyütmüş: harita tasarımları daha geniş, savaş anları daha kaotik, atmosfer daha sert. Normandiya çıkartması sahnesi o yıllarda gerçekten nefes kesti.", steam:"https://store.steampowered.com/app/2630/" },
+  { id:6,  name:"Call of Duty 4: Modern Warfare",       appId:7940,    special:false, genre:"FPS · Modern Savaş", note:"Serinin dönüm noktası. İkinci Dünya Savaşından çıkıp modern çatışmaya geçiş mükemmeldi. Hikaye sinematik, multiplayer ise tam anlamıyla bağımlılık yapıcıydı — prestij sistemi hayatımı çaldı.", steam:"https://store.steampowered.com/app/7940/" },
+  { id:7,  name:"Call of Duty: World at War",           appId:10090,   special:false, genre:"FPS · Savaş", note:"Serinin en karanlık ve ham oyunlarından biri. Pasifik cephesinin vahşeti ve Treyarch imzalı Nazi Zombies modu bu oyunu unutulmaz kılıyor. Co-op kampanya da ayrı bir eğlenceydi.", steam:"https://store.steampowered.com/app/10090/" },
+  { id:8,  name:"Call of Duty: Modern Warfare 2",       appId:10180,   special:false, genre:"FPS · Modern Savaş", note:"Serinin zirvelerinden biri. Müziğiyle, hikayesiyle ve elbette o controversial 'No Russian' sahnesiyle hafızalara kazındı. Multiplayer dengesi tartışmalıydı ama keyfi inanılmazdı.", steam:"https://store.steampowered.com/app/10180/" },
+  { id:9,  name:"Call of Duty: Black Ops",              appId:42700,   special:false, genre:"FPS · Soğuk Savaş", note:"Soğuk Savaş paranoyası, zihin kontrol deneyleri ve Mason'ın gizemli hikayesi... Treyarch bu oyunla bambaşka bir CoD deneyimi sundu. Numbers istasyonu sahnesi hâlâ tüylerimi diken diken ediyor.", steam:"https://store.steampowered.com/app/42700/" },
+  { id:10, name:"Call of Duty: Modern Warfare 3",       appId:115300,  special:false, genre:"FPS · Modern Savaş", note:"MW üçlemesinin kapanışı olarak hikayeyi tatmin edici şekilde sonuçlandırdı. Price ve Makarov arasındaki kapanış sahnesi serinin en iyi finallerinden. Survival modu da güzel bir ek.", steam:"https://store.steampowered.com/app/115300/" },
+  { id:11, name:"Call of Duty: Black Ops II",           appId:202990,  special:false, genre:"FPS · Fütüristik", note:"Serinin en cesur deneyi: branching storyline, seçimler ve birden fazla son. Mason ailesinin hikayesi hem geçmişte hem geleceğe uzanıyordu. Multiplayer tarafı da tartışmasız o dönemin en iyisiydi.", steam:"https://store.steampowered.com/app/202990/" },
+  { id:12, name:"Call of Duty: Ghosts",                 appId:209160,  special:true,  genre:"FPS · Modern Savaş", note:"Çoğu kişinin hafife aldığı ama benim için özel bir yeri olan bir CoD. Logan ve Hesh kardeşliği, Federation'a karşı verilen çaresiz mücadele ve o müthiş son twist... Ghosts beni derinden etkiledi.", steam:"https://store.steampowered.com/app/209160/" },
+  { id:13, name:"Call of Duty: Advanced Warfare",       appId:209650,  special:false, customImg:"https://shared.steamstatic.com/store_item_assets/steam/apps/209650/header.jpg", genre:"FPS · Fütüristik", note:"Exo suit mekaniği oynanışa taze bir soluk getirdi; zıplamak, kaçınmak, hızlanmak bambaşka hissettirdi. Kevin Spacey'nin villain performansı da bu oyunu ayrıştıran bir detaydı.", steam:"https://store.steampowered.com/app/209650/" },
+  { id:14, name:"Watch Dogs",                           appId:243470,  special:true,  genre:"Açık Dünya · Aksiyon", note:"Her şeyi hackleyebileceğin bir Chicago — konsept olarak harikaydı ve hâlâ öyle hissettiriyor. Aiden Pierce tartışmalı bir karakter olsa da şehrin dijital ağıyla oynamak gerçekten eğlenceliydi. Bu seriyi ilk oyundan beri takip ediyorum.", steam:"https://store.steampowered.com/app/243470/" },
+  { id:15, name:"Watch Dogs 2",                         appId:447040,  special:false, genre:"Açık Dünya · Aksiyon", note:"Marcus Holloway ile San Francisco'da DedSec'in hacktivist mücadelesi çok daha canlı ve renkli bir deneyim sundu. Drone ve RC araç mekaniği gameplay'e yaratıcılık kattı.", steam:"https://store.steampowered.com/app/447040/" },
+  { id:16, name:"The Witcher 3: Wild Hunt",             appId:292030,  special:false, genre:"Açık Dünya · Aksiyon-RPG", note:"Oyun tarihinin başyapıtlarından biri. Geralt'ın Ciri'yi arayışı, yan görevlerin bile epik hikayeler sunması, Skellige'nin o ihtişamlı atmosferi... Her köşesinde sizi bekleyen bir şey var. Kart oyunu Gwent'e saatler harcadım.", steam:"https://store.steampowered.com/app/292030/" },
+  { id:17, name:"Ghostrunner",                          appId:1139900, special:false, genre:"FPS · Siber Punk · Aksiyon", note:"Tek vuruşta öldür ya da öl. Bu minimalist kural üzerine kurulu inanılmaz hızlı bir siber punk aksiyon oyunu. Her ölüm seni sinir etmiyor, aksine 'bir kez daha' dedirtiyor. Ritmi yakaladığında kendinizi bir ninja gibi hissediyorsunuz.", steam:"https://store.steampowered.com/app/1139900/" },
+  { id:18, name:"Heavy Rain",                           appId:960910,  special:false, genre:"İnteraktif Drama · Gerilim", note:"Ethan Mars'ın kaybolan oğlu için yaptıkları, Quantic Dream'in en duygusal hikayelerinden birini oluşturuyor. Her kararın sonuçları olan bu interaktif deneyim, oynayıp bitirdikten sonra size bir süre sessizlik bırakıyor.", steam:"https://store.steampowered.com/app/960910/" },
+  { id:19, name:"Battlefield 1",                        appId:1238840, special:false, genre:"FPS · Savaş", note:"Birinci Dünya Savaşı'nı hiçbir oyunun yapamadığı kadar iyi anlattı. Prologue'daki 've düştü' anı oyun tarihinin en etkileyici sahnelerinden. Multiplayer'daki kaos ve ölçek benzersiz.", steam:"https://store.steampowered.com/app/1238840/" },
+  { id:20, name:"Battlefield 3",                        appId:1238820, special:false, genre:"FPS · Modern Savaş", note:"Modern savaş FPS'lerinin dorukta olduğu dönemde çıktı ve CoD'a güçlü bir alternatif sundu. Frostbite motorunun yıkılabilir çevre mekaniği gerçekten devrim niteliğindeydi.", steam:"https://store.steampowered.com/app/1238820/" },
+  { id:21, name:"Battlefield 4",                        appId:1238810, special:false, genre:"FPS · Modern Savaş", note:"Açılışta teknede çalan o müzik, Levolution sistemiyle çöken gökdelenler, dinamik haritalar... BF4 çıkışta sorunluydu ama yamanlar sonrası serinin en iyi multiplayer deneyimlerinden birine dönüştü.", steam:"https://store.steampowered.com/app/1238810/" },
+  { id:22, name:"Battlefield: Bad Company 2",        appId:24960,   special:false, genre:"FPS · Modern Savaş", note:"Frostbite motorunun Destruction 2.0 sistemiyle tanıştığımız oyun. Bütün bir binanın çöküşünü izlemek o dönem için inanılmazdı. B Company'nin deli dolu kadrosu da hikayeye bambaşka bir renk kattı.", steam:"https://store.steampowered.com/app/24960/" },
+  { id:23, name:"Battlefield Hardline",                 appId:1238880, special:false, customImg:"https://cdn.cloudflare.steamstatic.com/steam/apps/1238880/header.jpg", genre:"FPS · Polisiye", note:"Savaş alanını polisiye bir ortama taşıyan cesur bir deney. Cops vs Criminals formatı multiplayer'a taze bir boyut kattı; arabalı kovalamacalar ve banka soygunları farklı bir Battlefield hissi yarattı.", steam:"https://store.steampowered.com/app/1238830/" },
 ];
 
 const CHARS = [
